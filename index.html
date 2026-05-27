@@ -8,12 +8,12 @@
 		:root {
 			--bg-top: #0f172a;
 			--bg-bottom: #1d3557;
-			--panel: rgba(255, 255, 255, 0.92);
-			--panel-strong: rgba(255, 255, 255, 0.97);
+			--panel: rgba(241, 249, 255, 0.92);
+			--panel-strong: rgba(247, 252, 255, 0.97);
 			--text: #10243f;
 			--muted: #4a617c;
-			--accent: #d35400;
-			--accent-soft: #ffd7b8;
+			--accent: #11009c;
+			--accent-soft: #72d9eb;
 			--border: rgba(16, 36, 63, 0.08);
 			--shadow: 0 24px 60px rgba(15, 23, 42, 0.28);
 			--radius-xl: 28px;
@@ -31,7 +31,7 @@
 			font-family: "Avenir Next", "Trebuchet MS", sans-serif;
 			color: var(--text);
 			background:
-				radial-gradient(circle at top left, rgba(255, 214, 165, 0.24), transparent 32%),
+				radial-gradient(circle at top left, rgba(114, 217, 235, 0.24), transparent 32%),
 				radial-gradient(circle at 85% 18%, rgba(255, 255, 255, 0.18), transparent 20%),
 				linear-gradient(145deg, var(--bg-top), var(--bg-bottom));
 		}
@@ -51,7 +51,7 @@
 			height: 320px;
 			top: 5%;
 			right: -80px;
-			background: rgba(255, 215, 186, 0.18);
+			background: rgba(114, 217, 235, 0.22);
 			filter: blur(8px);
 		}
 
@@ -60,7 +60,7 @@
 			height: 220px;
 			bottom: 10%;
 			left: -60px;
-			background: rgba(211, 84, 0, 0.2);
+			background: rgba(17, 0, 156, 0.2);
 			filter: blur(6px);
 		}
 
@@ -158,7 +158,7 @@
 		}
 
 		.video-card {
-			background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 240, 233, 0.96));
+			background: linear-gradient(180deg, rgba(248, 252, 255, 0.98), rgba(228, 243, 255, 0.96));
 		}
 
 		.video-frame {
@@ -221,7 +221,7 @@
 			flex-shrink: 0;
 			padding: 10px 14px;
 			border-radius: 999px;
-			background: rgba(211, 84, 0, 0.1);
+			background: rgba(17, 0, 156, 0.1);
 			color: var(--accent);
 			font-weight: 700;
 			font-size: 0.88rem;
@@ -232,7 +232,7 @@
 			padding: 16px 18px;
 			border-left: 4px solid var(--accent);
 			border-radius: var(--radius-md);
-			background: rgba(211, 84, 0, 0.08);
+			background: rgba(114, 217, 235, 0.18);
 			color: var(--muted);
 			line-height: 1.6;
 		}
@@ -259,6 +259,10 @@
 			border-radius: var(--radius-lg);
 			background: rgba(16, 36, 63, 0.06);
 			border: 1px solid var(--border);
+		}
+
+		.experiment-card--wide {
+			grid-column: 1 / -1;
 		}
 
 		.experiment-card h3 {
@@ -300,7 +304,7 @@
 			margin: 0 24px 24px;
 			padding: 20px;
 			border-radius: var(--radius-lg);
-			background: rgba(16, 36, 63, 0.06);
+			background: rgba(114, 217, 235, 0.08);
 			border: 1px solid var(--border);
 		}
 
@@ -328,6 +332,10 @@
 			font-weight: 700;
 			text-decoration-thickness: 2px;
 			text-underline-offset: 3px;
+		}
+
+		.experiment-grid .reference-card {
+			margin: 0;
 		}
 
 		.tech-grid {
@@ -384,7 +392,7 @@
 			margin: 0 24px 24px;
 			padding: 18px 20px;
 			border-radius: var(--radius-lg);
-			background: rgba(16, 36, 63, 0.05);
+			background: rgba(114, 217, 235, 0.08);
 		}
 
 		.raw-data summary {
@@ -493,6 +501,22 @@
 				</video>
 			</div>
 
+			<div class="experiment-grid">
+				<section class="experiment-card experiment-card--wide">
+					<h3>Atributos aplicados al reproductor principal</h3>
+					<p>
+						Este reproductor mantiene los controles nativos del navegador, carga primero solo los metadatos,
+						permite reproducci&oacute;n integrada en m&oacute;viles compatibles y reinicia el clip al terminar.
+					</p>
+					<ul class="attribute-list">
+						<li>controls</li>
+						<li>loop</li>
+						<li>preload=&quot;metadata&quot;</li>
+						<li>playsinline</li>
+					</ul>
+				</section>
+			</div>
+
 			<div class="video-header">
 				<div class="video-actions">
 					<a class="video-link" href="02-clip-tarea1-mpg4-264-75.mp4" target="_blank" rel="noreferrer">Abrir video directo</a>
@@ -512,20 +536,6 @@
 
 			<div class="experiment-grid">
 				<section class="experiment-card">
-					<h3>Atributos aplicados al reproductor principal</h3>
-					<p>
-						Este reproductor mantiene los controles nativos del navegador, carga primero solo los metadatos,
-						permite reproducci&oacute;n integrada en m&oacute;viles compatibles y reinicia el clip al terminar.
-					</p>
-					<ul class="attribute-list">
-						<li>controls</li>
-						<li>loop</li>
-						<li>preload=&quot;metadata&quot;</li>
-						<li>playsinline</li>
-					</ul>
-				</section>
-
-				<section class="experiment-card">
 					<h3>Experimento: vista previa autom&aacute;tica</h3>
 					<p>
 						Este segundo ejemplo demuestra <strong>autoplay</strong>. En navegadores actuales necesita tambi&eacute;n
@@ -543,20 +553,24 @@
 						<li>preload=&quot;auto&quot;</li>
 					</ul>
 				</section>
-			</div>
 
-			<section class="reference-card">
-				<h3>Referencia consultada</h3>
-				<p>
-					Los atributos experimentados en esta pr&aacute;ctica se han contrastado con la documentaci&oacute;n de MDN para el elemento
-					<code>&lt;video&gt;</code>.
-				</p>
-				<ul class="reference-list">
-					<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video#attributes" target="_blank" rel="noreferrer">MDN &lt;video&gt;: secci&oacute;n de atributos</a></li>
-					<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video#attributes" target="_blank" rel="noreferrer">controls</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video#attributes" target="_blank" rel="noreferrer">loop</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video#attributes" target="_blank" rel="noreferrer">preload</a> y <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video#attributes" target="_blank" rel="noreferrer">playsinline</a> para el reproductor principal</li>
-					<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video#attributes" target="_blank" rel="noreferrer">autoplay</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video#attributes" target="_blank" rel="noreferrer">muted</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video#attributes" target="_blank" rel="noreferrer">loop</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video#attributes" target="_blank" rel="noreferrer">playsinline</a> y <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video#attributes" target="_blank" rel="noreferrer">preload</a> para la vista previa autom&aacute;tica</li>
-				</ul>
-			</section>
+				<section class="reference-card">
+					<h3>Referencia consultada</h3>
+					<p>
+						Los atributos experimentados en esta pr&aacute;ctica se han contrastado con la documentaci&oacute;n de MDN para el elemento
+						<code>&lt;video&gt;</code>.
+					</p>
+					<ul class="reference-list">
+						<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video#attributes" target="_blank" rel="noreferrer">MDN &lt;video&gt;: secci&oacute;n de atributos</a></li>
+						<li><strong>controls:</strong> muestra los controles nativos del navegador para reproducir, pausar, mover la barra de progreso y ajustar el volumen.</li>
+						<li><strong>loop:</strong> hace que el video vuelva a comenzar autom&aacute;ticamente cuando llega al final.</li>
+						<li><strong>preload:</strong> indica al navegador cu&aacute;nto contenido conviene cargar antes de reproducir; en esta pr&aacute;ctica se usa <strong>metadata</strong> en el reproductor principal y <strong>auto</strong> en la vista previa.</li>
+						<li><strong>playsinline:</strong> indica que el video debe reproducirse dentro de la propia p&aacute;gina, algo especialmente &uacute;til en dispositivos m&oacute;viles compatibles.</li>
+						<li><strong>autoplay:</strong> intenta iniciar la reproducci&oacute;n autom&aacute;ticamente en cuanto el navegador considera que puede hacerlo.</li>
+						<li><strong>muted:</strong> inicia el video sin sonido; en muchos navegadores actuales es necesario para que <strong>autoplay</strong> funcione.</li>
+					</ul>
+				</section>
+			</div>
 
 			<div class="tech-grid">
 				<section class="tech-panel">
